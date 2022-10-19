@@ -37,18 +37,41 @@ var_dump($novo_array, $novo_assoc );
  * [ ordenação ] reverse | asort | ksort | sort
  */
 fullStackPHPClassSession("ordenação", __LINE__);
+$novo_assoc_ksort = $novo_assoc;
 
-sort($novo_assoc);
+//asort($novo_assoc); //ordenação através do valor do item e mantem a chave ao invés de retornar apenas o índice
 
-ksort($novo_assoc)
-
+echo "<h6>ordenação através do valor do item</h6>";
+sort($novo_assoc); //ordenação através do valor do item
 var_dump($novo_assoc);
 
+echo "<h6>ordenação através da chave do índice - array associativo</h6>";
+ksort($novo_assoc_ksort); //ordenação através da chave do índice - array associativo
+var_dump($novo_assoc_ksort);
+
+
+$reverse_array = [
+    "A","B","F","Z","X"
+];
+
+echo "<h6>ordenação reversa do valor do item</h6>";
+$novo_reverse_array = array_reverse($reverse_array, true);
+var_dump($novo_reverse_array);
+
+
+/*
+    1 - Segue o ARRAY:
+        ["A", "B", "X", "Z", "F", "E", "J", "Ç"]
+        -> Imprima este array de forma alfabética
+        -> Imprima este array de forma alfabética ao contrário 
+*/
 
 /*
  * [ verificação ]  keys | values | in | explode
  */
 fullStackPHPClassSession("verificação", __LINE__);
+
+
 
 
 /**
