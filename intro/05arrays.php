@@ -65,6 +65,24 @@ var_dump($novo_reverse_array);
         -> Imprima este array de forma alfabética
         -> Imprima este array de forma alfabética ao contrário 
 */
+$array =["A", "B", "X", "Z", "F", "E", "J", "Ç"];
+
+echo "<h2> alfabetica ao contrario </h2>";
+rsort($array);
+foreach ($array as $array) {
+var_dump ($array);
+}
+
+echo "<h2> forma alfabetica </h2>";
+ 
+$array =["A", "B", "X", "Z", "F", "E", "J", "Ç"];
+sort($array);
+foreach ($array as $array) {
+var_dump ($array);
+}
+
+
+
 
 /*
  * [ verificação ]  keys | values | in | explode
