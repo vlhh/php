@@ -72,3 +72,11 @@ echo "<h5>" . str_replace (["programacao", "internet"], array("desenvolvimento",
  */
 fullStackPHPClassSession("parse string", __LINE__);
 
+$site = "https://www.google.com.br/search?q=univates&source=hp&ei=PEBPY4_CKInM1sQPu_ukmAQ&iflsig=AJiK0e8AAAAAY09OTHPSTSx2z6xaHoD1LqcoykcExz5v&ved=0ahUKEwiP0LavgOv6AhUJppUCHbs9CUMQ4dUDCAg&uact=5&oq=univates&gs_lcp=Cgdnd3Mtd2l6EAMyCwgAEIAEELEDEIMBMgsIABCABBCxAxCDATIFCAAQgAQyBQgAEIAEMgsILhCABBDHARCvATIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEOgoILhDqAhC0AhBDOg0ILhDUAhDqAhC0AhBDOgoIABDqAhC0AhBDOhEILhCABBCxAxCDARDHARDRAzoOCC4QgAQQsQMQgwEQ1AI6CAguELEDEIMBOggILhCABBDUAjoFCC4QgAQ6DgguELEDEIMBEMcBENEDOggIABCABBCxAzoLCC4QgAQQsQMQgwFQuAZY6Axgxw5oCXAAeACAAQCIAQCSAQCYAQCgAQGwAQo&sclient=gws-wiz";
+
+mb_parse_str($site, $siteComParametros);
+
+var_dump([
+    "site" => $site,
+    "parametros" => $siteComParametros,
+]);

@@ -102,7 +102,6 @@ realize um comando echo que consiga mostra o texto sem as marcacoes em html
 $texto = "<p>ola <span> <i>mundos </i> </span><p>";
 $cleanCode = call_user_func("strip_tags", $texto);
 
-
 echo $texto;
 echo $cleanCode;
 
