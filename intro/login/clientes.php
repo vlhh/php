@@ -43,7 +43,7 @@ if(isset($_GET["id"])){
             <?php include('menu.php')?>
 
             <label>Nome</label>
-            <input type="text" class="form-control" value="<?= $cliente['nome'] ?>"/>
+            <input type="text" class="form-control" value="<?php echo ($cliente !=null ? $cliente['nome'] : '') ?>"/>
         </div>
     </div>
 
