@@ -38,12 +38,25 @@ if(isset($_GET["id"])){
 <body>
 
     <div class="container">
+    <?php include('menu.php')?>
     <div class="row">
         <div class="col-md-12">
-            <?php include('menu.php')?>
+            <div class="col-md-12">
+            <form method="post" action="actions/actions.php?tipo=cliente" >
+
+            <input type="hidden" name="id" class="form-control" value="<?php echo ($cliente !=null ? $cliente['id'] : '') ?>"/>
 
             <label>Nome</label>
-            <input type="text" class="form-control" value="<?php echo ($cliente !=null ? $cliente['nome'] : '') ?>"/>
+            <input type="text" name="nome" class="form-control" value="<?php echo ($cliente !=null ? $cliente['nome'] : '') ?>"/>
+
+            <label>E-mail</label>
+            <input type="email" name="email" class="form-control" value="<?php echo ($cliente !=null ? $cliente['email'] : '') ?>"/>
+
+            <input class="btn btn-warning" value=Limpar type="reset">
+            <button class="btn btn-primary" type="submit">Salvar</button>
+
+            </form>
+            </div>
         </div>
     </div>
 
