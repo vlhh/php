@@ -40,25 +40,58 @@ if(isset($_GET["id"])){
     <div class="container">
     <?php include('menu.php')?>
     <div class="row">
-        <div class="col-md-12">
-            <div class="col-md-12">
-            <form method="post" action="actions/actions.php?tipo=cliente" >
+            <div class="col-sm-12">
 
-            <input type="hidden" name="id" class="form-control" value="<?php echo ($cliente !=null ? $cliente['id'] : '') ?>"/>
+                <form method="post" action="actions/actions.php?tipo=cliente">
 
-            <label>Nome</label>
-            <input type="text" name="nome" class="form-control" value="<?php echo ($cliente !=null ? $cliente['nome'] : '') ?>"/>
+                    <input type="hidden" class="form-control" name="id" value="<?php echo ($cliente != null ? $cliente['id'] : '') ?>">
 
-            <label>E-mail</label>
-            <input type="email" name="email" class="form-control" value="<?php echo ($cliente !=null ? $cliente['email'] : '') ?>"/>
+                    <div class="row mb-3">
+                        <div class="col-sm-6 col-md-4">
+                            <label>Nome</label>
+                            <input type="text" class="form-control" name="nome" placeholder="Nome" value="<?php echo ($cliente != null ? $cliente['nome'] : '') ?>">
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <label>E-mail</label>
+                            <input type="email" class="form-control" name="email" placeholder="E-mail" value="<?php echo ($cliente != null ? $cliente['email'] : '') ?>">
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <label>Telefone</label>
+                            <input type="text" class="form-control" name="telefone" placeholder="E-mail" value="<?php echo ($cliente != null ? $cliente['telefone'] : '') ?>">
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <label>Data de Nascimento</label>
+                            <input type="date" class="form-control" name="data_nascimento" placeholder="E-mail" value="<?php echo ($cliente != null ? $cliente['data_nascimento'] : '') ?>">
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <label>Cidade</label>
+                            <select class="form-control" name='id_cidade'>
+                            <?php
+                            $stmt = $conexao->prepare("SELECT id,nome FROM cidade ORDER BY nome");
+                            $stmt ->execute();
+                            echo "<option value='0'>SELECIONE..</option>";
+                            while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+                                if($cliente !=null && $cliente['id_cidade'] == $row['id']){
+                                    echo "<option value='" . $row['id']."'>".$row ['nome'] ."</option>";
+                                }else{
+                                    echo "<option value='" . $row['id'] . "'>" . $row ['nome'] . "</option>";
+                                }
 
-            <input class="btn btn-warning" value=Limpar type="reset">
-            <button class="btn btn-primary" type="submit">Salvar</button>
+                                
 
-            </form>
+                            }
+                        ?>
+                            </select>
+                        </div>
+                    </div>
+
+                    <input class="btn btn-warning" value="Limpar" type="reset">
+                    <button class="btn btn-primary" type="submit">Salvar</button>
+
+                </form>
+
             </div>
         </div>
-    </div>
 
     
     </div>

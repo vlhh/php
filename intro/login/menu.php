@@ -13,6 +13,9 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="lista-clientes.php">Clientes<span class="sr-only"></span></a>
                 </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="lista-cidade.php">Cidades<span class="sr-only"></span></a>
+                </li>
             </ul>
         </div>
     </nav>

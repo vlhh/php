@@ -20,35 +20,29 @@ $conexao = require('database/config.php');
 
         <div class="row">
             <div class="col-md-12">
-            <a class='btn btn-block btn-primary' href='clientes.php'> Novo Cliente</a>
+            <a class='btn btn-block btn-primary' href='cidade.php'> Nova Cidade</a>
 
                 <table class="table">
                     <thead>
                         <tr>
                             <th scope="col">Nome</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Telefone</th>
-                            <th scope="col">Data de Nascimento</th>
-                            <th scope="col">Id cidade</th>
+                            <th scope="col">Sigla</th>
                             <th scope="col">Ações</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
-                            $stmt = $conexao->prepare("SELECT * FROM clientes ORDER BY nome");
+                            $stmt = $conexao->prepare("SELECT * FROM cidade ORDER BY nome");
                             $stmt ->execute();
                             while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
                                 echo "<tr> 
                                 <td>".$row['nome']."</td>
-                                <td>".$row['email']."</td>
-                                <td>".$row['telefone']."</td>
-                                <td>".$row['data_nascimento']."</td>
-                                <td>".$row['id_cidade']."</td>
+                                <td>".$row['sigla_estado']."</td>
                                 <td>
-                                    <a class='btn btn-md btn-success' href='clientes.php?id=".$row['id'] ."'>
+                                    <a class='btn btn-md btn-success' href='cidade.php?id=".$row['id'] ."'>
                                     <i class='fa fa-edit'></i></a>
-                                    <a class='btn btn-md btn-danger' href='actions/delete.php?id=".$row['id'] ."'>
-                                    <i class='fa fa-trash'></i></a>
+                                    <a class='btn btn-md btn-danger' href='actions/delete.php?cidade=".$row['id'] ."'>
+                                    <i class='fa fa-trash' ></i></a>
                                 </td>
                                 </tr>";
 
