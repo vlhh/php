@@ -89,7 +89,7 @@ $tipo = $_GET['tipo'];
                 exit();
             }
         } else {
-            $sql = "INSERT INTO cidade (nome),(sigla_estado) VALUES(?,?)";
+            $sql = "INSERT INTO cidade (nome,sigla_estado) VALUES(?,?)";
             $stmt = $conexao->prepare($sql);
             $return = $stmt->execute([$nome,$sigla_estado]);
     

@@ -41,7 +41,7 @@ $conexao = require('database/config.php');
                                 <td>
                                     <a class='btn btn-md btn-success' href='cidade.php?id=".$row['id'] ."'>
                                     <i class='fa fa-edit'></i></a>
-                                    <a class='btn btn-md btn-danger' href='actions/delete.php?cidade=".$row['id'] ."'>
+                                    <a class='btn btn-md btn-danger' href='actions/delete.php?id=".$row['id'] ."'>
                                     <i class='fa fa-trash' ></i></a>
                                 </td>
                                 </tr>";

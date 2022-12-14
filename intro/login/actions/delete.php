@@ -3,10 +3,10 @@ session_start();
 
 $conexao = require('../database/config.php');
 
-$tabela = $_GET["tabela"];
-$chave = $_GET["chave"];
+$tabela = $_GET['cidade'];
+$chave = $_GET['id'];
 
-$sql = "UPDATE" . $tabela . "SET excluido = true WHERE id = ?";
+$sql = "UPDATE" . $tabela . "SET cliente WHERE id = ?";
 $stmt = $conexao->prepare($sql);
 $return = $stmt->execute([$chave]);
 
@@ -15,3 +15,7 @@ if ($return){
     header('Location:../index.php');
     exit();
 }
+
+
+
+
