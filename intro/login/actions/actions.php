@@ -54,7 +54,7 @@ $tipo = $_GET['tipo'];
                 exit();
             }
         } else {
-            $sql = "INSERT INTO clientes (nome,email,telefone,data_nascimento,id_cidade) VALUES(?,?,?,?,?)";
+            $sql = "INSERT INTO clientes (nome, email, telefone, data_nascimento, id_cidade) VALUES(?,?,?,?,?)";
             $stmt = $conexao->prepare($sql);
             $return = $stmt->execute([$nome, $email, $telefone, $data_nascimento, $id_cidade]);
     
