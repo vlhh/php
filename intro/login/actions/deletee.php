@@ -6,7 +6,7 @@ $conexao = require('../database/config.php');
 
 $chave = $_GET['id'];
 
-$sql = "DELETE from cidade where id = '" .$_GET['id']."'";
+$sql = "DELETE from clientes where id = '" .$_GET['id']."'";
 $stmt = $conexao->prepare($sql);
 $return = $stmt->execute([$chave]);
 
@@ -15,4 +15,3 @@ if ($return){
     header('Location:../index.php');
     exit();
 }
-

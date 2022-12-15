@@ -43,7 +43,10 @@ $conexao = require('database/config.php');
                                     <i class='fa fa-edit'></i></a>
                                     <a class='btn btn-md btn-danger' href='actions/delete.php?id=".$row['id'] ."'>
                                     <i class='fa fa-trash' ></i></a>
+                                
+                                    
                                 </td>
+                                
                                 </tr>";
 
                             }

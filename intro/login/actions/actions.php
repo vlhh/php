@@ -43,11 +43,10 @@ $tipo = $_GET['tipo'];
             exit();
         }
 
-    
         if (isset($id) && $id != '') {
-            $sql = "UPDATE clientes SET nome = ?, email = ?, telefone=?, data_nascimento=?,id_cidade=? WHERE id = ?";
+            $sql = "UPDATE clientes SET nome = ?, email = ? , telefone = ?, data_nascimento = ?, id_cidade = ? WHERE id = ?";
             $stmt = $conexao->prepare($sql);
-            $return = $stmt->execute([$nome,$email,$telefone,$data_nascimento,$id_cidade,$id]);
+            $return = $stmt->execute([$nome, $email, $telefone, $data_nascimento, $id_cidade, $id]);
     
             if ($return) {
                 $_SESSION['sucesso'] = "Cliente alterado com sucesso!";
@@ -55,9 +54,9 @@ $tipo = $_GET['tipo'];
                 exit();
             }
         } else {
-            $sql = "INSERT INTO clientes (nome),(email),(telefone),(data_nascimento),(id_cidade) VALUES(?,?,?,?,?)";
+            $sql = "INSERT INTO clientes (nome,email,telefone,data_nascimento,id_cidade) VALUES(?,?,?,?,?)";
             $stmt = $conexao->prepare($sql);
-            $return = $stmt->execute([$nome,$email,$telefone,$data_nascimento,$id_cidade]);
+            $return = $stmt->execute([$nome, $email, $telefone, $data_nascimento, $id_cidade]);
     
             if ($return) {
                 $_SESSION['sucesso'] = "Cliente incluído com sucesso!";
