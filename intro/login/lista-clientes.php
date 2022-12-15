@@ -29,13 +29,13 @@ $conexao = require('database/config.php');
                             <th scope="col">Email</th>
                             <th scope="col">Telefone</th>
                             <th scope="col">Data de Nascimento</th>
-                            <th scope="col">Id cidade</th>
+                            <th scope="col">Cidade</th>
                             <th scope="col">Ações</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
-                            $stmt = $conexao->prepare("SELECT * FROM clientes ORDER BY nome");
+                            $stmt = $conexao->prepare("SELECT c.*,ci.nome as cidade FROM clientes c, cidade ci where c.id_cidade = ci.id ORDER BY c.nome");
                             $stmt ->execute();
                             while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
                                 echo "<tr> 
@@ -43,7 +43,7 @@ $conexao = require('database/config.php');
                                 <td>".$row['email']."</td>
                                 <td>".$row['telefone']."</td>
                                 <td>".$row['data_nascimento']."</td>
-                                <td>".$row['id_cidade']."</td>
+                                <td>".$row['cidade']."</td>
                                 <td>
                                     <a class='btn btn-md btn-success' href='clientes.php?id=".$row['id'] ."'>
                                     <i class='fa fa-edit'></i></a>

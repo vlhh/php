@@ -57,11 +57,11 @@ if(isset($_GET["id"])){
                         </div>
                         <div class="col-sm-6 col-md-4">
                             <label>Telefone</label>
-                            <input type="text" class="form-control" name="telefone" placeholder="E-mail" value="<?php echo ($cliente != null ? $cliente['telefone'] : '') ?>">
+                            <input type="text" class="form-control" name="telefone" placeholder="*****-****" value="<?php echo ($cliente != null ? $cliente['telefone'] : '') ?>">
                         </div>
                         <div class="col-sm-6 col-md-4">
                             <label>Data de Nascimento</label>
-                            <input type="date" class="form-control" name="data_nascimento" placeholder="E-mail" value="<?php echo ($cliente != null ? $cliente['data_nascimento'] : '') ?>">
+                            <input type="date" class="form-control" name="data_nascimento" value="<?php echo ($cliente != null ? $cliente['data_nascimento'] : '') ?>">
                         </div>
                         <div class="col-sm-6 col-md-4">
                             <label>Cidade</label>
